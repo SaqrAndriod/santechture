@@ -1,6 +1,7 @@
 package com.santechture.api.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.santechture.api.dto.user.UserDto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.springframework.http.HttpStatus;
@@ -18,6 +19,7 @@ public class GeneralResponse implements Serializable {
     private String message;
     private Integer total;
     private Object data;
+    private String jwt;
 
     public GeneralResponse() {}
 
@@ -150,11 +152,6 @@ public class GeneralResponse implements Serializable {
     }
 
 
-
-
-
-
-
     public Integer getCode() {
         return code;
     }
@@ -184,8 +181,19 @@ public class GeneralResponse implements Serializable {
         return data;
     }
 
-    public void setData(Object[] data) {
+    public void setData(UserDto data) {
         this.data = data;
     }
+
+
+    public String getJwt() {
+        return jwt;
+    }
+
+    public void setJwt(String jwt) {
+        this.jwt = jwt;
+    }
+
+
 
 }
